@@ -71,9 +71,11 @@ while True:
             pos = xbmc.Player().getTime()
             xbmc.Player().stop()
             pacount = 0
-            mgenlog ='Autostop paused playback: ' + ptitle +     \
+            mgenlog ='Autostop stopped paused playback: ' + ptitle +     \
             ' at: ' + time.strftime("%H:%M:%S", time.gmtime(pos))
             xbmc.log(mgenlog, xbmc.LOGINFO)
+            dialog = xbmcgui.Dialog()
+            dialog.notification('Autostop Paused Timer', mgenlog, xbmcgui.NOTIFICATION_INFO, 5000)
             if settings('screensaver') == 'true':  #  Active screensaver if option selected
                 xbmc.executebuiltin('ActivateScreensaver')
         elif player.paflag == 0:
@@ -90,9 +92,11 @@ while True:
             pos = xbmc.Player().getTime()
             xbmc.Player().stop()
             plcount = 0
-            mgenlog ='Autostop current playback: ' + ptitle +     \
+            mgenlog ='Autostop stopped current playback: ' + ptitle +     \
             ' at: ' + time.strftime("%H:%M:%S", time.gmtime(pos))
             xbmc.log(mgenlog, xbmc.LOGINFO)
+            dialog = xbmcgui.Dialog()
+            dialog.notification('Autostop Sleep Timer', mgenlog, xbmcgui.NOTIFICATION_INFO, 5000)
             if settings('screensaver') == 'true':  #  Active screensaver if option selected
                 xbmc.executebuiltin('ActivateScreensaver')
         elif player.plflag == 0:
