@@ -1,6 +1,7 @@
 # Autostop addon
 An addon for Kodi (XBMC) which monitors video and music playback.  It allows users to selectively stop paused playback or stop  current playback after a certain amount of time.
 
+
 Features:
 - Kodi 19 compatible.
 - Autostop paused playback setting from 0 - 60 minutes in 5 minute intervals.

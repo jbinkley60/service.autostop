@@ -66,8 +66,14 @@ while True:
         xbmc.log('Autostop pause count and stop time ' + str(pacount) + ' ' + str(pastoptime) +    \
         ' ' + str(player.paflag), xbmc.LOGDEBUG)
         if pastoptime > 0 and pacount >= pastoptime * 60 and player.paflag == 1:
-            ptag = xbmc.Player().getVideoInfoTag()
-            ptitle = ptag.getTitle()
+            if xbmc.Player().isPlayingVideo():
+                ptag = xbmc.Player().getVideoInfoTag()
+                ptitle = ptag.getTitle()
+            elif xbmc.Player().isPlayingAudio():
+                ptag = xbmc.Player().getMusicInfoTag()
+                ptitle = ptag.getTitle()                
+            else:
+                ptitle = "playing file"
             pos = xbmc.Player().getTime()
             xbmc.Player().stop()
             pacount = 0
@@ -87,8 +93,14 @@ while True:
         xbmc.log('Autostop play count and stop time ' + str(plcount) + ' ' + str(plstoptime) +    \
         ' ' + str(player.plflag), xbmc.LOGDEBUG)
         if plstoptime > 0 and plcount >= plstoptime * 60 and player.plflag == 1:
-            ptag = xbmc.Player().getVideoInfoTag()
-            ptitle = ptag.getTitle()
+            if xbmc.Player().isPlayingVideo():
+                ptag = xbmc.Player().getVideoInfoTag()
+                ptitle = ptag.getTitle()
+            elif xbmc.Player().isPlayingAudio():
+                ptag = xbmc.Player().getMusicInfoTag()
+                ptitle = ptag.getTitle()                
+            else:
+                ptitle = "playing file"
             pos = xbmc.Player().getTime()
             xbmc.Player().stop()
             plcount = 0

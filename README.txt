@@ -8,7 +8,7 @@ allow quick adjustment of the timer without going into the autostop addon settin
 Here's a favourites example:
 
 <favourites>
-    <favourite name="Autostop Sleep Timer">RunScript("plugin.video.autostop")</favourite>
+    <favourite name="Autostop Sleep Timer">RunScript("service.autostop")</favourite>
 </favourites>
 
 A popup window will appear for 3 seconds to let you know the new sleep timer value.  
