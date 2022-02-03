@@ -26,7 +26,7 @@ class XBMCPlayer(xbmc.Player):
         self.paflag = 0
         self.plflag = 0
         pass
- 
+      
     def onPlayBackStarted(self):
         self.paflag = 0
         self.plflag = 1
@@ -75,7 +75,7 @@ while not monitor.abortRequested():
         except:
             xbmc.log('Autostop pause count and stop time exception error' + str(pacount) + ' ' + \
             str(pastoptime) + ' ' + str(player.paflag), xbmc.LOGINFO)
-            pass            
+                       
 
     plcount = playCount(plcount, padjust, player.plflag, player.paflag, asevlog)
     sleepNotify(plcount, plstoptime, player.plflag, plnotify, plextend, asevlog, player.paflag) 
@@ -97,10 +97,13 @@ while not monitor.abortRequested():
                 notifymsg = translate(30310)
                 plcount = 0
                 stopPlayback(notifymsg, logmsg)      # Stop playback if playing too long
+            if plstoptime == 0:                      # Don't increment plcount if sleep setting is 0
+                plcount = 0
+            #xbmc.log("Autostop plstoptime." + str(plstoptime) + ' ' + str(plcount), xbmc.LOGINFO)
         except:
             xbmc.log('Autostop play count and stop time exception error' + str(pacount) + ' ' \
             + str(pastoptime) + ' ' + str(player.paflag), xbmc.LOGINFO)
-            pass       
+                 
 
     if monitor.waitForAbort(1): # Sleep/wait for abort for 1 second.
         xbmc.log("Autostop addon service stopped." , xbmc.LOGINFO)
