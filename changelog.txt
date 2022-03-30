@@ -1,3 +1,19 @@
+1.0.5
+
+- Added 300 and 600 second options for playback stop notification.
+- Added check to ensure both playback stop and notification timers 
+  aren't set to 10 minutes creating a logic loop and instant 
+  notification on playback start. 
+- Added Autostop addon icon to notification messages for easier
+  identification.
+
+1.0.4
+
+- Fixed a bug where the sleep timer could execute prematurely
+  when calling timer change via keyboard.xml or favourites.xml
+  due to playcount timer running when the sleep timer was set
+  to 0. 
+
 1.0.3
 
 -  Fixed exception bug when Kodi begins but is unable to play
