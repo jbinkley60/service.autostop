@@ -108,6 +108,10 @@ msgctxt "#30322"
 msgid "Sleep Timer Reset"
 msgstr ""
 
+msgctxt "#30323"
+msgid "Countdown Notification"
+msgstr ""
+
 msgctxt "#30501"
 msgid "Automatically stop paused video or music in minutes.  0 = never automatically stop paused playback."
 msgstr ""
@@ -142,4 +146,8 @@ msgstr ""
 
 msgctxt "#30509"
 msgid "Enabling resets sleep timer back to 0 after playback stopped by sleep timer.  Default is disabled."
+msgstr ""
+
+msgctxt "#30510"
+msgid "Enabling causes Kodi notification alert when the sleep timer countdown progress window appears.  Default is disabled."
 msgstr ""

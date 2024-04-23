@@ -56,6 +56,7 @@ def sleepNotify(plcount, plstoptime, plflag, plnotify, plextend, asevlog, paflag
     global notifycount
     extime = float(settings('extime'))
     notifyset = settings('notifyset')
+    countnotify = settings('countnotify')
     varextnotify = settings('varextnotify')
     totalstoptime = plstoptime + extime
     if plstoptime > 0 and plcount + plnotify >= totalstoptime \
@@ -66,6 +67,8 @@ def sleepNotify(plcount, plstoptime, plflag, plnotify, plextend, asevlog, paflag
             settings('notifyset', 'yes')
             notifycount = 0
             xbmc.log('Autostop notify counter started.', xbmc.LOGINFO)
+            if countnotify == 'true':                           # Kodi notification enabled
+                xbmcgui.Dialog().notification(translate(30310), translate(30308), addon_icon, 5000)
         elif notifyset == 'yes':                                # Update notification
             notifycount += 1
             if notifycount >= plnotify:                         # Upper bounds check

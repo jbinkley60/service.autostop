@@ -111,6 +111,11 @@
 					<default>false</default>
 					<control type="toggle"/>
 				</setting>
+				<setting id="countnotify" type="boolean" label="30323" help="30510">
+					<level>0</level>
+					<default>false</default>
+					<control type="toggle"/>
+				</setting>
 				<setting id="asevlog" type="boolean" label="30312" help="30507">
 					<level>3</level>
 					<default>false</default>
