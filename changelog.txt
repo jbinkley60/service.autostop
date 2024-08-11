@@ -1,7 +1,8 @@
-1.0.6a
+1.0.6b
 
 - Added option setting to enable Kodi notification when sleep timer
   progress window appears.
+- Added 1 minute option to Pause Autostop setting
 
 1.0.6
 
